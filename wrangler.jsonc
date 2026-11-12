@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "chbdev",
+  "compatibility_date": "2025-10-01",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "chbdev.com", "custom_domain": true },
+    { "pattern": "www.chbdev.com", "custom_domain": true }
+  ]
+}
