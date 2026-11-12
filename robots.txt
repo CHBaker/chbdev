@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chbdev.com/sitemap.xml
