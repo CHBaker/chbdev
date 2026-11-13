@@ -1,13 +1,18 @@
 // POST /api/contact
 // Receives the contact form from chbdev.com and emails it to Hudson through Resend.
 //
-// Secrets and settings (set on the Worker, never in this file):
-//   RESEND_API_KEY  required  a Resend key with "Sending access" only
-//   CONTACT_TO      optional  where messages go (default below)
-//   CONTACT_FROM    optional  a sender on a domain verified in Resend (default below)
+// Settings (set on the Worker, never in this file):
+//   RESEND_API_KEY    required  a Resend key with "Sending access" only
+//   TURNSTILE_SECRET  optional  Cloudflare Turnstile secret; when set, every message must pass the check
+//   CONTACT_TO        optional  where messages go (default below)
+//   CONTACT_FROM      optional  a sender on a domain verified in Resend (default below)
+// Binding (wrangler.jsonc): CONTACT_LIMIT, a per-visitor rate limiter.
+//
+// Layers, cheapest first: same-site check, per-visitor rate limit, hidden field and minimum
+// fill time, field validation, Turnstile, then the send.
 
 const DEFAULT_TO = "charlesprobaker@gmail.com";
-const DEFAULT_FROM = "Portfolio contact <hello@longbow.fit>";
+const DEFAULT_FROM = "chbdev.com contact <hello@longbow.fit>";
 const MIN_FILL_MS = 2500; // a human takes longer than this to fill the form
 
 function reply(body, status = 200) {
@@ -29,13 +34,36 @@ function looksLikeEmail(email) {
   return at > 0 && email.indexOf(" ") < 0 && email.lastIndexOf(".") > at + 1 && email.lastIndexOf(".") < email.length - 1;
 }
 
+async function turnstilePassed(token, secret, ip) {
+  const form = new URLSearchParams({ secret, response: String(token || "") });
+  if (ip) form.set("remoteip", ip);
+  try {
+    const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body: form });
+    if (!res.ok) return false;
+    const out = await res.json();
+    return out.success === true;
+  } catch (e) {
+    return false;
+  }
+}
+
 export async function handleContact(request, env) {
   if (request.method !== "POST") return reply({ error: "Use POST." }, 405);
 
-  // Only accept posts from this site's own pages.
+  // Only this site's own pages may post. Browsers always send Origin on a POST, so a missing one is refused.
   const origin = request.headers.get("origin");
-  if (origin && new URL(origin).host !== new URL(request.url).host) {
+  let sameSite = false;
+  try { sameSite = !!origin && new URL(origin).host === new URL(request.url).host; } catch (e) { sameSite = false; }
+  const fetchSite = request.headers.get("sec-fetch-site");
+  if (!sameSite || (fetchSite && fetchSite !== "same-origin")) {
     return reply({ error: "Not allowed." }, 403);
+  }
+
+  // Per-visitor rate limit (a handful of tries a minute).
+  const ip = request.headers.get("cf-connecting-ip") || "";
+  if (env.CONTACT_LIMIT) {
+    const { success } = await env.CONTACT_LIMIT.limit({ key: ip || "unknown" });
+    if (!success) return reply({ error: "Too many tries. Please wait a minute and try again." }, 429);
   }
 
   let data;
@@ -56,6 +84,11 @@ export async function handleContact(request, env) {
 
   if (!name || !looksLikeEmail(email) || message.length < 10) {
     return reply({ error: "Please add your name, a valid email, and a message." }, 400);
+  }
+
+  // Turnstile, when it is switched on for this Worker.
+  if (env.TURNSTILE_SECRET && !(await turnstilePassed(data.token, env.TURNSTILE_SECRET, ip))) {
+    return reply({ error: "The spam check did not pass. Please reload the page and try again." }, 400);
   }
 
   if (!env.RESEND_API_KEY) {

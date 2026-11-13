@@ -525,6 +525,7 @@
       <label for="cf-msg">Message</label>
       <textarea id="cf-msg" name="message" rows="6" required maxlength="5000" placeholder="Tell me about the role and the team."></textarea>
       <div class="hp" aria-hidden="true"><label>Leave this empty<input tabindex="-1" autocomplete="off" name="website"></label></div>
+      <div id="cf-ts" class="ts-slot"></div>
       <button class="btn p" type="submit" id="cf-send">Send</button>
       <p class="cstatus" id="cf-status" role="status" aria-live="polite"></p>
     </form>
@@ -554,20 +555,32 @@
   if (cform) {
     var cStatus = document.getElementById("cf-status"), cSend = document.getElementById("cf-send"), cOpened = Date.now();
     var cSay = function (msg, kind) { cStatus.textContent = msg; cStatus.className = "cstatus" + (kind ? " " + kind : ""); };
+    /* spam check: the public site adds a Turnstile site key in a meta tag; without one the check is off */
+    var tsMeta = document.querySelector('meta[name="turnstile-sitekey"]'), tsKey = tsMeta ? tsMeta.getAttribute("content") : "", tsToken = "";
+    if (tsKey) {
+      var tsScript = document.createElement("script");
+      tsScript.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      tsScript.async = true;
+      tsScript.onload = function () {
+        window.turnstile.render("#cf-ts", { sitekey: tsKey, callback: function (t) { tsToken = t; }, "expired-callback": function () { tsToken = ""; }, "error-callback": function () { tsToken = ""; } });
+      };
+      document.head.appendChild(tsScript);
+    }
     cform.addEventListener("submit", function (e) {
       e.preventDefault();
       var nm = cform.elements["name"].value.trim(), em = cform.elements["email"].value.trim(), msg = cform.elements["message"].value.trim();
       var emailOk = em.indexOf("@") > 0 && em.indexOf(" ") < 0 && em.lastIndexOf(".") > em.indexOf("@") + 1 && em.lastIndexOf(".") < em.length - 1;
       if (!nm || !emailOk || msg.length < 10) { cSay("Please add your name, a valid email, and a message of at least a sentence.", "err"); return; }
+      if (tsKey && !tsToken) { cSay("Please complete the spam check first.", "err"); return; }
       cSend.disabled = true; cSay("Sending...");
-      fetch("/api/contact", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ name: nm, email: em, message: msg, website: cform.elements["website"].value, t: cOpened }) })
+      fetch("/api/contact", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ name: nm, email: em, message: msg, website: cform.elements["website"].value, t: cOpened, token: tsToken }) })
         .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
         .then(function (res) {
           if (res.ok) { cform.reset(); cSay("Sent. I will write back from my own email.", "ok"); }
           else { cSay((res.j && res.j.error ? res.j.error + " " : "That did not go through. ") + "You can also email charlesprobaker@gmail.com directly.", "err"); }
         })
         .catch(function () { cSay("That did not go through. You can email charlesprobaker@gmail.com directly.", "err"); })
-        .then(function () { cSend.disabled = false; });
+        .then(function () { cSend.disabled = false; if (tsKey && window.turnstile) { window.turnstile.reset(); tsToken = ""; } });
     });
   }
 
