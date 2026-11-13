@@ -143,21 +143,29 @@
   .app p { font-size: .95rem; color: var(--muted); }
 
   /* expandable stories */
-  .more-story { margin-top: .9rem; }
-  .more-story summary { display: inline-flex; align-items: center; gap: .45rem; cursor: pointer; list-style: none; font-size: .92rem; font-weight: 600; color: var(--accent); }
-  .more-story summary::-webkit-details-marker { display: none; }
-  .more-story summary::after { content: "+"; font-family: var(--mono); font-weight: 500; }
-  .more-story[open] summary::after { content: "−"; }
-  .more-story summary:hover { text-decoration: underline; text-underline-offset: .18em; }
-  .more-story summary:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; border-radius: 2px; }
-  .story-body { margin-top: .8rem; padding-top: .9rem; border-top: 1px solid var(--rule); }
-  .story-body h5 { margin: 1rem 0 .25rem; font-family: var(--mono); font-size: .68rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--brass-ink); }
-  .story-body h5:first-child { margin-top: 0; }
-  .story-body p { font-size: .95rem; color: var(--ink); }
+  .story-src { display: none; }
+  .no-dlg .story-src { display: block; margin-top: .8rem; padding-top: .9rem; border-top: 1px solid var(--rule); }
+  .no-dlg .story-btn { display: none; }
+  .story-btn { margin-top: auto; padding: .7rem 0 0; background: none; border: 0; border-top: 1px solid var(--rule); width: 100%; text-align: left; font-size: .92rem; font-weight: 600; color: var(--accent); cursor: pointer; }
+  .story-btn::after { content: " \2192"; }
+  .story-btn:hover { text-decoration: underline; text-underline-offset: .18em; }
+  .story-src h5, .sdlg-body h5 { margin: 1rem 0 .25rem; font-family: var(--mono); font-size: .68rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--brass-ink); }
+  .story-src h5:first-child, .sdlg-body h5:first-child { margin-top: 0; }
+  .story-src p, .sdlg-body p { font-size: .95rem; color: var(--ink); }
+
+  /* story dialog */
+  dialog.sdlg { width: min(40rem, calc(100% - 2rem)); max-height: calc(100% - 3rem); padding: 0; border: 0; border-top: 5px solid var(--brass); border-radius: 2px; background: var(--card); color: var(--ink); overflow: auto; }
+  dialog.sdlg::backdrop { background: rgba(42, 10, 18, .7); }
+  .sdlg-in { padding: 1.4rem 1.5rem 1.6rem; }
+  .sdlg-in h3 { margin: 0 0 .9rem; font-family: var(--display); font-weight: 500; font-size: 1.9rem; line-height: 1.05; text-transform: uppercase; color: var(--num); }
+  .sdlg-close { float: right; margin: 0 0 .5rem 1rem; padding: .3rem .8rem; background: transparent; border: 1px solid var(--rule); border-radius: 2px; font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); }
+  .sdlg-close:hover { border-color: var(--num); }
 
   /* cards */
   .cards { display: grid; gap: 1rem; align-items: start; }
-  @media (min-width: 46rem) { .cards { grid-template-columns: repeat(2, 1fr); } .card.wide-card { grid-column: 1 / -1; } }
+  .cards.equal { align-items: stretch; }
+  .card > p:last-of-type { margin-bottom: 1rem; }
+  @media (min-width: 46rem) { .cards { grid-template-columns: repeat(2, 1fr); } .cards.equal { grid-auto-rows: 1fr; } .card.wide-card { grid-column: 1 / -1; } }
   .card { border: 1px solid var(--rule); border-radius: 2px; padding: 1.3rem 1.4rem 1.4rem; background: var(--card); }
   .card:hover { border-color: var(--strong); }
   .card h4 { margin: 0 0 .6rem; font-family: var(--display); font-weight: 500; font-size: 1.85rem; line-height: 1.02; letter-spacing: .005em; text-transform: uppercase; color: var(--num); }
@@ -371,66 +379,50 @@
       </div>
     </article>
 
-    <div class="cards">
+    <div class="cards equal">
       <article class="card">
         <h4>The invoice that nearly doubled</h4>
         <p>A hand-off pushed a client's invoice to roughly double the original bid. I found the cause, corrected the engineer's practice, set up billing controls for that client, and negotiated the resolution. They did two more feature cycles and later signed a quarter-long engagement.</p>
-        <details class="more-story">
-          <summary>Read the story</summary>
-          <div class="story-body">
-          <h5>The situation</h5>
+        <div class="story-src"><h5>The situation</h5>
           <p>The client had a small budget and was billed ticket by ticket. An engineer who took over another engineer's work ran well over the original bid. The invoice came in at roughly twice what we had quoted, and the client was shocked.</p>
           <h5>What I did</h5>
           <p>I started by finding out why, before anyone argued about money. The cause was how the engineer who took over was working, so I corrected that practice. Then I set up billing controls for that client so a surprise like that could not happen again. Last, I sat down with the client and their project manager. I negotiated a reduced invoice and walked them through the reasoning behind the part that stayed.</p>
           <h5>How it ended</h5>
-          <p>The client's trust came back, and it did not happen again. They went on to do two more feature cycles with us and later signed a quarter-long engagement.</p>
-          </div>
-        </details>
+          <p>The client's trust came back, and it did not happen again. They went on to do two more feature cycles with us and later signed a quarter-long engagement.</p></div>
+        <button class="story-btn" type="button">Read the story</button>
       </article>
       <article class="card">
         <h4>Modernizing legacy customer flows</h4>
         <p>Augmented a large enterprise client's team to modernize legacy customer flows. I added test coverage to stabilize the app and mentored the client's engineers.</p>
-        <details class="more-story">
-          <summary>Read the story</summary>
-          <div class="story-body">
-          <h5>The situation</h5>
+        <div class="story-src"><h5>The situation</h5>
           <p>A large enterprise client had customer flows built on legacy code, and the app was unstable. Their front end was Angular.</p>
           <h5>What I did</h5>
           <p>We augmented the client's team to modernize those flows. I added test coverage to stabilize the app, and I mentored the client's engineers as we went.</p>
           <h5>How it ended</h5>
-          <p>The app was stabilized and the flows were modernized, and the client's engineers were mentored through the work.</p>
-          </div>
-        </details>
+          <p>The app was stabilized and the flows were modernized, and the client's engineers were mentored through the work.</p></div>
+        <button class="story-btn" type="button">Read the story</button>
       </article>
       <article class="card">
         <h4>Handoffs and audits</h4>
         <p>When full-time staff rolled off a client project, I led the AWS and infrastructure handoff and kept delivery steady. Separately, I audited another client team's productivity and infrastructure and presented my recommendations to leadership.</p>
-        <details class="more-story">
-          <summary>Read the story</summary>
-          <div class="story-body">
-          <h5>The handoff</h5>
+        <div class="story-src"><h5>The handoff</h5>
           <p>When the full-time staff on a client project rolled off, I led the AWS and infrastructure handoff. Leadership was away while it happened, so I kept delivery steady through it.</p>
           <h5>The audit</h5>
           <p>On another client's engineering team, I audited both productivity and infrastructure, then presented my recommendations to leadership.</p>
           <h5>How they ended</h5>
-          <p>The handoff landed without delivery slipping, and the audit ended in recommendations that went in front of leadership.</p>
-          </div>
-        </details>
+          <p>The handoff landed without delivery slipping, and the audit ended in recommendations that went in front of leadership.</p></div>
+        <button class="story-btn" type="button">Read the story</button>
       </article>
       <article class="card">
         <h4>Pre-sales and pricing</h4>
         <p>On pre-sales calls I covered demos, discovery, feasibility, and early architecture, and I sized the solution and the price to fit. Shostak, above, is the clearest example.</p>
-        <details class="more-story">
-          <summary>Read the story</summary>
-          <div class="story-body">
-          <h5>How I work a pre-sales call</h5>
+        <div class="story-src"><h5>How I work a pre-sales call</h5>
           <p>I cover the demo, discovery, feasibility, and early architecture, then size the solution and the price to fit.</p>
           <h5>The clearest example</h5>
           <p>On Shostak, the client wanted to work with us but hesitated on cost. I fit the scope to a negotiated cap and kept the cap visible, so every trade-off could be argued in the open.</p>
           <h5>How it ended</h5>
-          <p>We delivered inside the cap, with a larger epic than we first agreed, while absorbing changes of direction along the way.</p>
-          </div>
-        </details>
+          <p>We delivered inside the cap, with a larger epic than we first agreed, while absorbing changes of direction along the way.</p></div>
+        <button class="story-btn" type="button">Read the story</button>
       </article>
     </div>
   </div>
@@ -543,6 +535,14 @@
     <p class="fine">Charles Hudson Baker. Colorado Springs, CO. Remote.</p>
   </div>
 </footer>
+
+<dialog id="sdlg" class="sdlg" aria-labelledby="sdlg-title">
+  <div class="sdlg-in">
+    <button class="sdlg-close" type="button" id="sdlg-close">Close</button>
+    <h3 id="sdlg-title"></h3>
+    <div class="sdlg-body" id="sdlg-body"></div>
+  </div>
+</dialog>
 
 <script>
 (function () {
@@ -664,6 +664,24 @@
   window.addEventListener("scroll", reveal, { passive: true });
   window.addEventListener("resize", reveal);
   reveal();
+
+  /* stories open in a dialog, so every card keeps the same height */
+  var sdlg = document.getElementById("sdlg");
+  if (sdlg && sdlg.showModal) {
+    Array.prototype.forEach.call(document.querySelectorAll(".story-btn"), function (b) {
+      b.addEventListener("click", function () {
+        var card = b.closest(".card");
+        document.getElementById("sdlg-title").textContent = card.querySelector("h4").textContent;
+        document.getElementById("sdlg-body").innerHTML = card.querySelector(".story-src").innerHTML;
+        sdlg.showModal();
+        sdlg.scrollTop = 0;
+      });
+    });
+    document.getElementById("sdlg-close").addEventListener("click", function () { sdlg.close(); });
+    sdlg.addEventListener("click", function (e) { if (e.target === sdlg) sdlg.close(); });
+  } else {
+    doc.classList.add("no-dlg");
+  }
 })();
 </script>
 </body>
