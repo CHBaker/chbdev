@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hudson Baker | Senior Engineering Manager, AI integration and client delivery</title>
+<title>Charles Hudson Baker | Senior Engineering Manager, AI integration and client delivery</title>
 <meta name="description" content="Engineering leader. I make AI the core of how engineering teams deliver, from the first sales call to launch.">
-<meta name="author" content="Hudson Baker">
+<meta name="author" content="Charles Hudson Baker">
 <link rel="canonical" href="https://chbdev.com/">
 <meta name="theme-color" content="#5E1224" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#2F0812" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
 
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Hudson Baker">
-<meta property="og:title" content="Hudson Baker | Senior Engineering Manager, AI integration and client delivery">
+<meta property="og:site_name" content="Charles Hudson Baker">
+<meta property="og:title" content="Charles Hudson Baker | Senior Engineering Manager, AI integration and client delivery">
 <meta property="og:description" content="Engineering leader. I make AI the core of how engineering teams deliver, from the first sales call to launch.">
 <meta property="og:url" content="https://chbdev.com/">
 <meta property="og:image" content="https://chbdev.com/og.png">
@@ -21,7 +21,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="An apricot lightning bolt on an oxblood ground.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hudson Baker | Senior Engineering Manager, AI integration and client delivery">
+<meta name="twitter:title" content="Charles Hudson Baker | Senior Engineering Manager, AI integration and client delivery">
 <meta name="twitter:description" content="Engineering leader. I make AI the core of how engineering teams deliver, from the first sales call to launch.">
 <meta name="twitter:image" content="https://chbdev.com/og.png">
 
@@ -33,64 +33,69 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Hudson Baker","alternateName":"Charles Hudson Baker","url":"https://chbdev.com/","jobTitle":"Senior Engineering Manager","sameAs":["https://www.linkedin.com/in/chbdev","https://github.com/CHBaker"]}
+{"@context":"https://schema.org","@type":"Person","name":"Charles Hudson Baker","alternateName":"Hudson Baker","url":"https://chbdev.com/","jobTitle":"Senior Engineering Manager","sameAs":["https://www.linkedin.com/in/chbdev","https://github.com/CHBaker"]}
 </script>
 
 <style>
-  /* Oxblood and Apricot. Light is the default; dark follows the visitor's system setting.
-     --primary is the ground (hero, nav, footer, tabs). --apricot is the accent that sits on it. */
+
+  /* Oxblood and Apricot. Token names are historic: --cobalt is the PRIMARY ground (hero, nav, tabs),
+     --brass is the ACCENT that sits on it. Change the whole look here. */
   :root {
-    --primary: #5E1224; --primary-deep: #430C19; --apricot: #FFB86B; --on-primary: #F7F8FA; --on-apricot: #2A0A12;
+    --cobalt: #5E1224; --cobalt-deep: #430C19; --brass: #FFB86B; --on-cobalt: #F7F8FA; --on-brass: #2A0A12;
     --bg: #F6F3F3; --bg2: #EFE6E6; --card: #FFFFFF; --ink: #2A0A12; --muted: #6B4A52;
-    --accent: #7A1730; --num: #5E1224; --strong: #5E1224; --apricot-ink: #8A4B14;
-    --tab-on-bg: #5E1224; --tab-on-fg: #F7F8FA; --rule: #E3D0D2;
+    --accent: #7A1730; --num: #5E1224; --strong: #5E1224; --brass-ink: #8A4B14;
+    --tab-on-bg: #5E1224; --tab-on-fg: #F7F8FA; --rule: #E3D0D2; --frame: #10131F;
     --display: "Antonio", "Arial Narrow", Impact, sans-serif;
     --sans: "Instrument Sans", "Segoe UI", Calibri, Arial, sans-serif;
     --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+    --greek: "Noto Serif Display", Georgia, serif;
   }
+  /* dark theme, derived from the tokens above */
   @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #2F0812; --bg2: #430C19; --card: #3A0E1C; --ink: #F3F5F8; --muted: #D2BDC2;
-      --accent: #FFB86B; --num: #FFB86B; --strong: #FFB86B; --apricot-ink: #FFB86B;
-      --tab-on-bg: #FFB86B; --tab-on-fg: #2A0A12; --rule: #6A2A3A;
-    }
+    :root:not([data-theme="light"]) { --bg: color-mix(in srgb, var(--cobalt-deep) 70%, #000); --bg2: var(--cobalt-deep); --card: color-mix(in srgb, var(--cobalt) 60%, #000); --ink: #F3F5F8; --muted: color-mix(in srgb, #fff 72%, var(--cobalt)); --accent: var(--brass); --num: var(--brass); --strong: var(--brass); --brass-ink: var(--brass); --tab-on-bg: var(--brass); --tab-on-fg: var(--on-brass); --rule: color-mix(in srgb, var(--cobalt) 75%, #fff 10%); }
   }
+  :root[data-theme="dark"] { --bg: color-mix(in srgb, var(--cobalt-deep) 70%, #000); --bg2: var(--cobalt-deep); --card: color-mix(in srgb, var(--cobalt) 60%, #000); --ink: #F3F5F8; --muted: color-mix(in srgb, #fff 72%, var(--cobalt)); --accent: var(--brass); --num: var(--brass); --strong: var(--brass); --brass-ink: var(--brass); --tab-on-bg: var(--brass); --tab-on-fg: var(--on-brass); --rule: color-mix(in srgb, var(--cobalt) 75%, #fff 10%); }
 
-  .b-fill { fill: var(--apricot); } .b-stroke { stroke: var(--apricot); } .b-cut { stroke: var(--primary); }
+  .b-fill { fill: var(--brass); } .b-stroke { stroke: var(--brass); } .b-cut { stroke: var(--cobalt); }
 
   * { box-sizing: border-box; }
   html { font-size: 112.5%; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
   body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.6; font-kerning: normal; }
   a { color: var(--accent); text-underline-offset: .18em; text-decoration-thickness: 1px; }
-  a:focus-visible, button:focus-visible, [role="tab"]:focus-visible { outline: 2px solid var(--apricot); outline-offset: 3px; border-radius: 2px; }
+  a:focus-visible, button:focus-visible, [role="tab"]:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; border-radius: 2px; }
   p { margin: 0; } ul { margin: 0; padding: 0; list-style: none; }
   button { font: inherit; color: inherit; cursor: pointer; }
-  .skip { position: absolute; left: -999px; top: 0; background: var(--apricot); color: var(--on-apricot); padding: .5rem .8rem; z-index: 30; }
+  .skip { position: absolute; left: -999px; top: 0; background: var(--brass); color: var(--on-brass); padding: .5rem .8rem; z-index: 30; }
   .skip:focus { left: 1rem; top: 1rem; }
   .wrap { max-width: 62rem; margin: 0 auto; padding: 0 1.25rem; }
 
+
   /* nav */
-  .nav { position: sticky; top: 0; z-index: 20; background: var(--primary); color: var(--on-primary); border-bottom: 1px solid rgba(255, 255, 255, .14); }
+  .nav { position: sticky; top: 0; z-index: 20; background: var(--cobalt); color: var(--on-cobalt); border-bottom: 1px solid rgba(255, 255, 255, .14); }
   .nav .wrap { display: flex; align-items: center; gap: 1.4rem; min-height: 3.4rem; }
-  .brand { font-family: var(--display); font-weight: 500; font-size: 1.4rem; letter-spacing: .03em; text-transform: uppercase; color: var(--on-primary); text-decoration: none; margin-right: auto; }
-  .nav a.l { color: var(--on-primary); text-decoration: none; font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; }
-  .nav a.l:hover { color: var(--apricot); }
-  @media (max-width: 40rem) { .nav a.l.opt { display: none; } }
+  .brand { font-family: var(--display); font-weight: 500; font-size: 1.4rem; letter-spacing: .03em; text-transform: uppercase; color: var(--on-cobalt); text-decoration: none; margin-right: auto; }
+  .nav a.l { color: var(--on-cobalt); text-decoration: none; font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; }
+  .nav a.l:hover { color: var(--brass); }
+  .tt { border: 1px solid rgba(255, 255, 255, .4); background: transparent; border-radius: 2px; padding: .2rem .7rem; font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--on-cobalt); }
+  .tt:hover { border-color: var(--brass); color: var(--brass); }
+  .brand { white-space: nowrap; }
+  @media (max-width: 40rem) { .nav a.l.opt { display: none; } .nav .wrap { gap: .8rem; } .brand { font-size: 1.05rem; } }
 
   /* hero */
-  .hero { position: relative; overflow: hidden; background: var(--primary); color: var(--on-primary); padding: 3.4rem 0 6rem; }
+  .hero { position: relative; overflow: hidden; background: var(--cobalt); color: var(--on-cobalt); padding: 3.4rem 0 6rem; }
   .hero-in { position: relative; z-index: 1; }
-  .eyebrow { font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--apricot); }
-  h1 { margin: .7rem 0 1.4rem; font-family: var(--display); font-weight: 500; font-size: clamp(3.6rem, 15.5vw, 12rem); line-height: .9; letter-spacing: -.01em; text-transform: uppercase; color: var(--on-primary); }
-  .hero-line { max-width: 24em; font-size: clamp(1.35rem, 3.2vw, 1.9rem); line-height: 1.25; font-weight: 500; color: var(--on-primary); }
+  .eyebrow { font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--brass); }
+  h1 { margin: .7rem 0 1.4rem; font-family: var(--display); font-weight: 500; font-size: clamp(2.6rem, 11.5vw, 8.8rem); line-height: .95; letter-spacing: -.01em; text-transform: uppercase; color: var(--on-cobalt); }
+  .hero-line { max-width: 24em; font-size: clamp(1.35rem, 3.2vw, 1.9rem); line-height: 1.25; font-weight: 500; color: var(--on-cobalt); }
   .lede { margin-top: 1.3rem; max-width: 36rem; color: rgba(247, 248, 250, .88); }
-  .tagline { margin-top: 1rem; font-style: italic; color: var(--apricot); }
+  .tagline { margin-top: 1rem; font-style: italic; color: var(--brass); }
   .cta { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .7rem; }
-  .btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: .95rem; padding: .6rem 1.2rem; border-radius: 2px; border: 1px solid var(--apricot); }
-  .btn.p { background: var(--apricot); color: var(--on-apricot); } .btn.p:hover { filter: brightness(1.08); }
-  .btn.s { border-color: var(--on-primary); color: var(--on-primary); } .btn.s:hover { border-color: var(--apricot); color: var(--apricot); }
-  .bolt { position: absolute; z-index: 0; right: max(.5rem, calc((100% - 62rem) / 2 + 1.25rem)); bottom: 3.6rem; width: clamp(110px, 22vw, 210px); opacity: .2; pointer-events: none; }
-  @media (min-width: 62rem) { .bolt { opacity: .95; } }
+  .btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: .95rem; padding: .6rem 1.2rem; border-radius: 2px; border: 1px solid var(--brass); }
+  .btn.p { background: var(--brass); color: var(--on-brass); } .btn.p:hover { filter: brightness(1.08); }
+  .btn.s { border-color: var(--on-cobalt); color: var(--on-cobalt); } .btn.s:hover { border-color: var(--brass); color: var(--brass); }
+  .hero-body { position: relative; isolation: isolate; }
+  .bolt { position: absolute; z-index: -1; right: 3.5rem; top: 0; height: min(calc(100% + 3.6rem), 560px); width: auto; aspect-ratio: 220 / 420; opacity: .2; pointer-events: none; }
+  @media (min-width: 62rem) { .bolt { opacity: .85; } }
   .meander { position: absolute; left: 0; bottom: 0; width: 100%; height: 28px; }
 
   /* proof */
@@ -101,7 +106,7 @@
 
   /* sections */
   .sec { padding-top: 4rem; }
-  h2 { display: inline-block; margin: 0 0 1.8rem; padding: .2rem 1rem .1rem; background: var(--apricot); color: var(--on-apricot); font-family: var(--display); font-weight: 500; font-size: clamp(2.3rem, 6vw, 3.4rem); line-height: 1.05; letter-spacing: .01em; text-transform: uppercase; }
+  h2 { display: block; margin: 0 0 1.8rem; padding: .35rem 1rem .2rem; border-top: 3px solid var(--strong); background: var(--brass); color: var(--on-brass); font-family: var(--display); font-weight: 500; font-size: clamp(2.3rem, 6vw, 3.4rem); line-height: 1.05; letter-spacing: .01em; text-transform: uppercase; }
   h3 { margin: 0; font-family: var(--display); font-weight: 500; font-size: clamp(2rem, 5.4vw, 3rem); line-height: 1; letter-spacing: -.005em; text-transform: uppercase; color: var(--num); }
 
   /* tabs */
@@ -113,37 +118,52 @@
   .panel { max-width: 42rem; animation: rise .35s ease both; }
   .panel .lead { font-size: clamp(1.35rem, 3.2vw, 1.9rem); line-height: 1.25; font-weight: 500; margin-bottom: 1.2rem; }
   .panel li { position: relative; padding-left: 1.2rem; margin: 0 0 .7rem; }
-  .panel li::before { content: ""; position: absolute; left: .1rem; top: .62em; width: .4rem; height: .4rem; background: var(--apricot); }
+  .panel li::before { content: ""; position: absolute; left: .1rem; top: .62em; width: .4rem; height: .4rem; background: var(--brass); }
   .panel .more { margin-top: 1rem; font-size: .95rem; }
   .note { color: var(--muted); font-size: .9rem; }
 
+  /* work categories */
   .panel.wide { max-width: none; }
   .catlead { font-size: 1.15rem; line-height: 1.4; color: var(--muted); max-width: 40rem; margin-bottom: 1.6rem; }
 
   /* shostak */
-  .feature { background: var(--bg2); border: 1px solid var(--rule); border-top: 4px solid var(--apricot); border-radius: 2px; margin-bottom: 1.4rem; padding: 1.6rem 1.2rem 1.8rem; }
+  .feature { background: var(--bg2); border: 1px solid var(--rule); border-top: 4px solid var(--brass); border-radius: 2px; margin-bottom: 1.4rem; padding: 1.6rem 1.2rem 1.8rem; }
   @media (min-width: 46rem) { .feature { padding: 2.2rem 2rem 2.4rem; } }
   .cols { display: grid; gap: 2.4rem; }
-  @media (min-width: 56rem) { .cols { grid-template-columns: 7fr 5fr; align-items: start; } }
+  @media (min-width: 56rem) { .cols { grid-template-columns: 5fr 7fr; align-items: start; } }
   .story p { margin-top: 1rem; max-width: 34rem; }
   .story .sub { margin-top: .8rem; color: var(--muted); }
   .results { margin-top: 1.4rem; }
   .results li { position: relative; padding-left: 1.2rem; margin: 0 0 .5rem; }
-  .results li::before { content: ""; position: absolute; left: .1rem; top: .62em; width: .4rem; height: .4rem; background: var(--apricot); }
+  .results li::before { content: ""; position: absolute; left: .1rem; top: .62em; width: .4rem; height: .4rem; background: var(--brass); }
+
   .apps { display: grid; gap: .9rem; }
   .app { background: var(--card); border: 1px solid var(--rule); border-radius: 2px; padding: 1.1rem 1.2rem 1.2rem; }
   .app h4 { margin: 0 0 .4rem; font-family: var(--display); font-weight: 500; font-size: 1.6rem; line-height: 1.05; text-transform: uppercase; color: var(--num); }
   .app p { font-size: .95rem; color: var(--muted); }
 
+  /* expandable stories */
+  .more-story { margin-top: .9rem; }
+  .more-story summary { display: inline-flex; align-items: center; gap: .45rem; cursor: pointer; list-style: none; font-size: .92rem; font-weight: 600; color: var(--accent); }
+  .more-story summary::-webkit-details-marker { display: none; }
+  .more-story summary::after { content: "+"; font-family: var(--mono); font-weight: 500; }
+  .more-story[open] summary::after { content: "−"; }
+  .more-story summary:hover { text-decoration: underline; text-underline-offset: .18em; }
+  .more-story summary:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; border-radius: 2px; }
+  .story-body { margin-top: .8rem; padding-top: .9rem; border-top: 1px solid var(--rule); }
+  .story-body h5 { margin: 1rem 0 .25rem; font-family: var(--mono); font-size: .68rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--brass-ink); }
+  .story-body h5:first-child { margin-top: 0; }
+  .story-body p { font-size: .95rem; color: var(--ink); }
+
   /* cards */
-  .cards { display: grid; gap: 1rem; }
+  .cards { display: grid; gap: 1rem; align-items: start; }
   @media (min-width: 46rem) { .cards { grid-template-columns: repeat(2, 1fr); } .card.wide-card { grid-column: 1 / -1; } }
   .card { border: 1px solid var(--rule); border-radius: 2px; padding: 1.3rem 1.4rem 1.4rem; background: var(--card); }
   .card:hover { border-color: var(--strong); }
   .card h4 { margin: 0 0 .6rem; font-family: var(--display); font-weight: 500; font-size: 1.85rem; line-height: 1.02; letter-spacing: .005em; text-transform: uppercase; color: var(--num); }
   .card p { font-size: .95rem; color: var(--muted); }
   .card a { display: inline-block; margin-top: .7rem; font-size: .92rem; font-weight: 600; }
-  .card .tag { display: inline-block; vertical-align: .35em; margin-left: .5rem; font-family: var(--mono); font-size: .62rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--apricot-ink); border: 1px solid var(--apricot-ink); border-radius: 2px; padding: .05rem .55rem; }
+  .card .tag { display: inline-block; vertical-align: .35em; margin-left: .5rem; font-family: var(--mono); font-size: .62rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--brass-ink); border: 1px solid var(--brass-ink); border-radius: 2px; padding: .05rem .55rem; }
   .card a.thumb { display: block; margin: 0 0 .9rem; line-height: 0; }
   .card a.thumb img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 2px; border: 1px solid var(--rule); }
   .linkrow { margin-top: .8rem; display: flex; flex-wrap: wrap; gap: .3rem 1.1rem; }
@@ -152,13 +172,32 @@
   .card a.inline { display: inline; margin: 0; font-size: inherit; font-weight: 400; }
 
   /* contact */
-  footer { position: relative; margin-top: 5rem; background: var(--primary-deep); color: var(--on-primary); padding: 4.2rem 0 3.2rem; }
+  footer { position: relative; margin-top: 5rem; background: var(--cobalt-deep); color: var(--on-cobalt); padding: 3.4rem 0 2.2rem; }
   footer .meander { top: 0; bottom: auto; height: 22px; }
   footer .big { font-size: clamp(1.6rem, 4vw, 2.4rem); line-height: 1.2; font-weight: 500; max-width: 24em; }
   footer ul { margin-top: 1.4rem; display: flex; flex-wrap: wrap; gap: .4rem 1.6rem; }
-  footer a { color: var(--apricot); }
-  footer .founder { margin-top: 1.6rem; }
-  footer .fine { margin-top: 2rem; font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(247, 248, 250, .7); }
+  footer a { color: var(--brass); }
+  footer .founder { margin-bottom: 1.2rem; }
+  footer .fine { margin-top: 0; font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(247, 248, 250, .7); }
+
+  /* contact */
+  .contact-grid { display: grid; gap: 2.4rem; }
+  @media (min-width: 56rem) { .contact-grid { grid-template-columns: 5fr 6fr; align-items: start; } }
+  .contact-lead { font-size: clamp(1.35rem, 3.2vw, 1.9rem); line-height: 1.25; font-weight: 500; }
+  .contact-grid .note { margin-top: .9rem; }
+  .direct { margin-top: 1.4rem; display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; font-weight: 600; }
+  .cform { background: var(--card); border: 1px solid var(--rule); border-top: 4px solid var(--brass); border-radius: 2px; padding: 1.4rem 1.4rem 1.6rem; display: grid; gap: .35rem; }
+  .cform label { margin-top: .7rem; font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .cform input, .cform textarea { width: 100%; font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 2px; padding: .65rem .8rem; }
+  .cform input:focus, .cform textarea:focus { outline: 2px solid var(--brass); outline-offset: 1px; border-color: var(--strong); }
+  .cform .btn { justify-self: start; margin-top: 1rem; font-family: var(--sans); cursor: pointer; }
+  .cform .btn[disabled] { opacity: .6; cursor: progress; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .cstatus { min-height: 1.5em; margin-top: .6rem; font-size: .95rem; }
+  .cstatus.ok { color: var(--num); font-weight: 600; }
+  .cstatus.err { color: #A4161A; font-weight: 600; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cstatus.err { color: #FFB3A8; } }
+  :root[data-theme="dark"] .cstatus.err { color: #FFB3A8; }
 
   /* motion */
   @keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
@@ -172,7 +211,7 @@
 
   @media print {
     body { background: #fff; color: #000; }
-    .nav, .cta, .skip, .bolt, .meander { display: none; }
+    .nav, .draft, .cta, .tt, .seg, .arrow, .steps, .skip, .bolt, .meander { display: none; }
     .hero, footer { background: none; color: #000; }
     h1, .hero-line, .lede, .eyebrow, .tagline, footer a, footer .big, footer .fine { color: #000; }
     .js .reveal { opacity: 1; transform: none; }
@@ -185,12 +224,16 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+
 <nav class="nav" aria-label="Main">
   <div class="wrap">
-    <a class="brand" href="#top">Hudson Baker</a>
+    <a class="brand" href="#top">Charles Hudson Baker</a>
     <a class="l opt" href="#how">How I lead</a>
     <a class="l opt" href="#work">Work</a>
+    <a class="l opt" href="/resume.pdf">Resume</a>
+    <a class="l opt" href="https://github.com/CHBaker" target="_blank" rel="noopener">GitHub</a>
     <a class="l" href="#contact">Contact</a>
+    <button class="tt" id="theme" type="button" aria-label="Switch between light and dark">Theme</button>
   </div>
 </nav>
 
@@ -198,30 +241,33 @@
 <header class="hero" id="top">
   <div class="wrap hero-in">
     <p class="eyebrow">Senior engineering manager, AI integration and client delivery</p>
-    <h1>Hudson Baker</h1>
-    <p class="hero-line">I make AI the core of how engineering teams deliver, from the first sales call to launch.</p>
-    <p class="lede">For the past several years I led client project teams, and the engineers on them, at Briebug, a software consultancy. I managed staffing, hiring, pre-sales, and pricing while staying a 100% billable consultant. I co-led the firm's AI rollout and wrote the engineering process and AI usage policies behind it.</p>
+    <h1>Charles H. Baker</h1>
+    <div class="hero-body">
+      <svg class="bolt" aria-hidden="true" viewBox="0 0 220 420">
+      <defs>
+        <pattern id="bdots" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="3" class="b-fill"></circle></pattern>
+        <pattern id="bdotsS" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="1.3" class="b-fill"></circle></pattern>
+        <linearGradient id="bfade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"></stop><stop offset="1" stop-color="#fff" stop-opacity="0.15"></stop></linearGradient>
+        <mask id="bm"><rect width="220" height="420" fill="url(#bfade)"></rect></mask>
+      </defs>
+      <g mask="url(#bm)">
+        <path d="M118 6 L34 226 L96 226 L64 410 L182 154 L116 154 L158 6 Z" fill="url(#bdots)"></path>
+        <path d="M118 6 L34 226 L96 226 L64 410 L182 154 L116 154 L158 6 Z" fill="none" class="b-stroke" stroke-width="2"></path>
+        <path d="M132 40 L60 224 L112 224 L90 350" fill="none" class="b-cut" stroke-width="10" opacity="0.55"></path>
+      </g>
+      <rect x="6" y="6" width="208" height="408" fill="url(#bdotsS)" opacity="0.25"></rect>
+    </svg>
+      <p class="hero-line">I make AI the core of how engineering teams deliver, from the first sales call to launch.</p>
+    <p class="lede">For the past 7 years I've led client project teams and the engineers on them, starting as the tech lead on the work itself. I've run staffing, hiring, pre-sales, and pricing while staying 100% billable. I co-led the company's AI rollout and wrote the engineering process and AI usage policies behind it.</p>
     <p class="tagline">Eternally optimistic. Delusionally formidable.</p>
     <div class="cta">
       <a class="btn p" href="#how">How I lead</a>
       <a class="btn s" href="#work">Work</a>
       <a class="btn s" href="#contact">Say hello</a>
     </div>
+    </div>
   </div>
-  <svg class="bolt" aria-hidden="true" viewBox="0 0 220 420">
-    <defs>
-      <pattern id="bdots" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="3" class="b-fill"></circle></pattern>
-      <pattern id="bdotsS" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="1.3" class="b-fill"></circle></pattern>
-      <linearGradient id="bfade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"></stop><stop offset="1" stop-color="#fff" stop-opacity="0.15"></stop></linearGradient>
-      <mask id="bm"><rect width="220" height="420" fill="url(#bfade)"></rect></mask>
-    </defs>
-    <g mask="url(#bm)">
-      <path d="M118 6 L34 226 L96 226 L64 410 L182 154 L116 154 L158 6 Z" fill="url(#bdots)"></path>
-      <path d="M118 6 L34 226 L96 226 L64 410 L182 154 L116 154 L158 6 Z" fill="none" class="b-stroke" stroke-width="2"></path>
-      <path d="M132 40 L60 224 L112 224 L90 350" fill="none" class="b-cut" stroke-width="10" opacity="0.55"></path>
-    </g>
-    <rect x="6" y="6" width="208" height="408" fill="url(#bdotsS)" opacity="0.25"></rect>
-  </svg>
+  
   <svg class="meander" aria-hidden="true" width="100%" height="28">
     <defs><pattern id="key1" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M0 26 V2 H26 V18 H9 V10 H18" fill="none" class="b-stroke" stroke-width="2.5"></path></pattern></defs>
     <rect width="100%" height="28" fill="url(#key1)"></rect>
@@ -233,7 +279,7 @@
     <div><dt><span data-count="10">10</span></dt><dd>years in professional software</dd></div>
     <div><dt><span data-count="13">13</span></dt><dd>engineers managed at peak</dd></div>
     <div><dt><span data-count="3">3</span></dt><dd>apps shipped for a client startup in six months</dd></div>
-    <div><dt><span data-count="5">5</span></dt><dd>client engagements run at once, at the most</dd></div>
+    <div><dt><span data-count="5">5</span></dt><dd>client engagements managed simultaneously</dd></div>
   </dl>
 </section>
 
@@ -249,7 +295,7 @@
   <div class="panel" id="p1" role="tabpanel" aria-labelledby="t1">
     <p class="lead">I keep every contract staffed and every engineer knowing where they stand.</p>
     <ul>
-      <li>Led up to 13 engineers, most of the engineering team at one point, through quarterly reviews, 1:1s, and performance interventions, and ran the promotion-readiness reviews.</li>
+      <li>Led up to 13 engineers, the majority of the team at one point, through quarterly reviews, monthly 1:1s, and performance interventions, and made the call on who was ready for promotion.</li>
       <li>Ran up to five client engagements at the same time, and kept my own work 100% billable on top.</li>
       <li>Owned staffing and capacity against the contract roadmap. I interviewed candidates and made the hiring decisions.</li>
     </ul>
@@ -275,7 +321,7 @@
   <div class="panel" id="p4" role="tabpanel" aria-labelledby="t4" hidden>
     <p class="lead">When a client project goes sideways, I find out why before anyone argues about money.</p>
     <ul>
-      <li>Led client project teams through feature delivery, triage, and code quality. My incident reports went back into the team's delivery docs.</li>
+      <li>Led client project teams through feature delivery, triage, and code quality audits. My incident reports went back into the team's delivery docs.</li>
       <li>Kept a client after a hand-off pushed their invoice to roughly double the original bid. I found the cause, corrected the engineer's practice, set up billing controls for that client, and negotiated the resolution. They did two more feature cycles and later signed a quarter-long engagement.</li>
       <li>On pre-sales calls I covered demos, discovery, feasibility, and early architecture, and I sized the solution and the price to fit.</li>
       <li>Audited a client engineering team's productivity and infrastructure and presented my recommendations to leadership.</li>
@@ -300,7 +346,7 @@
           <h3>Shostak: three apps in six months, inside a capped budget</h3>
           <p class="sub">A streaming platform for independent filmmakers. A Briebug client project. I was the solution engineering lead and the technical lead.</p>
           <p>The client wanted to work with us and hesitated on cost. I fit the scope to a negotiated cap and kept the cap visible, so every trade-off could be argued in the open. Sprint 0 meant the team was building product on day one instead of wiring up tools.</p>
-          <p>For a stretch late in the build, I was the only engineer. I designed the solution for the admin billing system and the creator revenue-share logic, and led the team that built them.</p>
+          <p>We shipped a creator platform, a viewer app, and an admin app. The viewer app browses like a streaming service: worlds, series, seasons, episodes, then the player. Discover Worlds is its front door, with search, genre and tier filters, and a recommendation algorithm that ranks the content. I designed the solution for the admin billing system and the creator revenue-share logic, and led the team that built them. For a stretch late in the build, I was the only engineer.</p>
           <ul class="results">
             <li>Delivered inside the cap, with a larger epic than we first agreed.</li>
             <li>Three major releases.</li>
@@ -315,7 +361,7 @@
           </div>
           <div class="app">
             <h4>Viewer app</h4>
-            <p>Where audiences watch. It browses like a streaming service: worlds, series, seasons, episodes, then the player. It reflows for phones.</p>
+            <p>Where audiences watch. Discover Worlds ranks the catalog with a recommendation algorithm, alongside search and genre and tier filters. From there it browses like a streaming service: worlds, series, seasons, episodes, then the player. It reflows for phones.</p>
           </div>
           <div class="app">
             <h4>Admin app</h4>
@@ -327,20 +373,64 @@
 
     <div class="cards">
       <article class="card">
-        <h4>The invoice that roughly doubled</h4>
+        <h4>The invoice that nearly doubled</h4>
         <p>A hand-off pushed a client's invoice to roughly double the original bid. I found the cause, corrected the engineer's practice, set up billing controls for that client, and negotiated the resolution. They did two more feature cycles and later signed a quarter-long engagement.</p>
+        <details class="more-story">
+          <summary>Read the story</summary>
+          <div class="story-body">
+          <h5>The situation</h5>
+          <p>The client had a small budget and was billed ticket by ticket. An engineer who took over another engineer's work ran well over the original bid. The invoice came in at roughly twice what we had quoted, and the client was shocked.</p>
+          <h5>What I did</h5>
+          <p>I started by finding out why, before anyone argued about money. The cause was how the engineer who took over was working, so I corrected that practice. Then I set up billing controls for that client so a surprise like that could not happen again. Last, I sat down with the client and their project manager. I negotiated a reduced invoice and walked them through the reasoning behind the part that stayed.</p>
+          <h5>How it ended</h5>
+          <p>The client's trust came back, and it did not happen again. They went on to do two more feature cycles with us and later signed a quarter-long engagement.</p>
+          </div>
+        </details>
       </article>
       <article class="card">
         <h4>Modernizing legacy customer flows</h4>
         <p>Augmented a large enterprise client's team to modernize legacy customer flows. I added test coverage to stabilize the app and mentored the client's engineers.</p>
+        <details class="more-story">
+          <summary>Read the story</summary>
+          <div class="story-body">
+          <h5>The situation</h5>
+          <p>A large enterprise client had customer flows built on legacy code, and the app was unstable. Their front end was Angular.</p>
+          <h5>What I did</h5>
+          <p>We augmented the client's team to modernize those flows. I added test coverage to stabilize the app, and I mentored the client's engineers as we went.</p>
+          <h5>How it ended</h5>
+          <p>The app was stabilized and the flows were modernized, and the client's engineers were mentored through the work.</p>
+          </div>
+        </details>
       </article>
       <article class="card">
         <h4>Handoffs and audits</h4>
         <p>When full-time staff rolled off a client project, I led the AWS and infrastructure handoff and kept delivery steady. Separately, I audited another client team's productivity and infrastructure and presented my recommendations to leadership.</p>
+        <details class="more-story">
+          <summary>Read the story</summary>
+          <div class="story-body">
+          <h5>The handoff</h5>
+          <p>When the full-time staff on a client project rolled off, I led the AWS and infrastructure handoff. Leadership was away while it happened, so I kept delivery steady through it.</p>
+          <h5>The audit</h5>
+          <p>On another client's engineering team, I audited both productivity and infrastructure, then presented my recommendations to leadership.</p>
+          <h5>How they ended</h5>
+          <p>The handoff landed without delivery slipping, and the audit ended in recommendations that went in front of leadership.</p>
+          </div>
+        </details>
       </article>
       <article class="card">
         <h4>Pre-sales and pricing</h4>
         <p>On pre-sales calls I covered demos, discovery, feasibility, and early architecture, and I sized the solution and the price to fit. Shostak, above, is the clearest example.</p>
+        <details class="more-story">
+          <summary>Read the story</summary>
+          <div class="story-body">
+          <h5>How I work a pre-sales call</h5>
+          <p>I cover the demo, discovery, feasibility, and early architecture, then size the solution and the price to fit.</p>
+          <h5>The clearest example</h5>
+          <p>On Shostak, the client wanted to work with us but hesitated on cost. I fit the scope to a negotiated cap and kept the cap visible, so every trade-off could be argued in the open.</p>
+          <h5>How it ended</h5>
+          <p>We delivered inside the cap, with a larger epic than we first agreed, while absorbing changes of direction along the way.</p>
+          </div>
+        </details>
       </article>
     </div>
   </div>
@@ -354,7 +444,7 @@
       </article>
       <article class="card">
         <h4>The rules behind it</h4>
-        <p>Wrote the engineering process policies (pull-request review, QA, production rollbacks, Git hooks) and the AI usage policy: who owns AI-assisted work, and who answers when it goes wrong.</p>
+        <p>Wrote the engineering process policies (pull-request and merge review, QA, production rollbacks, Git hooks) and the AI usage policy: who owns AI-assisted work, and who answers when it goes wrong.</p>
       </article>
       <article class="card">
         <h4>Sprint 0</h4>
@@ -376,7 +466,7 @@
     <div class="cards">
       <article class="card">
         <h4>Video series: Angular and RxJS</h4>
-        <a class="thumb" href="https://www.youtube.com/watch?v=KxUJHRY6AHc"><img src="https://i.ytimg.com/vi/KxUJHRY6AHc/hqdefault.jpg" alt="The switchMap lesson on YouTube" loading="lazy"></a>
+        <a class="thumb" href="https://www.youtube.com/watch?v=KxUJHRY6AHc"><img src="https://i.ytimg.com/vi/KxUJHRY6AHc/hqdefault.jpg" alt="The switchMap lesson on YouTube"></a>
         <p>Short lessons I recorded for Briebug's YouTube channel on the RxJS operators I reached for most: switchMap, pluck, scan, distinct, and debounceTime. There is also one on unit-testing with dummies, fakes, mocks, and stubs.</p>
         <div class="linkrow">
           <a href="https://www.youtube.com/watch?v=KxUJHRY6AHc"><strong>Start with switchMap</strong></a>
@@ -405,7 +495,7 @@
       </article>
       <article class="card">
         <h4>Talks</h4>
-        <p>At Angular Denver I gave "The Crazy Train of Legacy Apps": how to make legacy apps fun again by modernizing the front end with Angular Elements, and when to migrate, rebuild, or leave it alone.</p>
+        <p>I've spoken at a lot of Angular meetups. One of them, at Angular Denver, was "The Crazy Train of Legacy Apps": how to make legacy apps fun again by modernizing the front end with Angular Elements, and when to migrate, rebuild, or leave it alone.</p>
         <div class="linkrow">
           <a href="https://angulardenver.com/speaker/hudson-baker">Angular Denver speaker page</a>
           <a href="https://www.eventbrite.com/e/evening-of-angular-2019-tickets-52323800897">Evening of Angular 2019</a>
@@ -414,21 +504,40 @@
     </div>
   </div>
 </section>
+<section class="sec wrap reveal" id="contact">
+  <h2>Contact</h2>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-lead">Hiring an engineering leader? I would like to hear about the role.</p>
+      <p class="note">Send a note here and it lands in my inbox. I write back myself.</p>
+      <ul class="direct">
+        <li><a href="mailto:charlesprobaker@gmail.com">charlesprobaker@gmail.com</a></li>
+        <li><a href="https://linkedin.com/in/chbdev">LinkedIn</a></li>
+        <li><a href="https://github.com/CHBaker">GitHub</a></li>
+        <li><a href="/resume.pdf">Resume (PDF)</a></li>
+      </ul>
+    </div>
+    <form class="cform" id="cform" novalidate>
+      <label for="cf-name">Name</label>
+      <input id="cf-name" name="name" autocomplete="name" required maxlength="100">
+      <label for="cf-email">Email</label>
+      <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="200">
+      <label for="cf-msg">Message</label>
+      <textarea id="cf-msg" name="message" rows="6" required maxlength="5000" placeholder="Tell me about the role and the team."></textarea>
+      <div class="hp" aria-hidden="true"><label>Leave this empty<input tabindex="-1" autocomplete="off" name="website"></label></div>
+      <button class="btn p" type="submit" id="cf-send">Send</button>
+      <p class="cstatus" id="cf-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
 </main>
 
-<footer id="contact">
+<footer>
   <svg class="meander" aria-hidden="true" width="100%" height="28">
     <defs><pattern id="key2" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M0 26 V2 H26 V18 H9 V10 H18" fill="none" class="b-stroke" stroke-width="2.5"></path></pattern></defs>
     <rect width="100%" height="28" fill="url(#key2)"></rect>
   </svg>
   <div class="wrap">
-    <p class="big">If your team is trying to get real work out of AI, I would like to hear about it.</p>
-    <ul>
-      <li><a href="mailto:charlesprobaker@gmail.com">charlesprobaker@gmail.com</a></li>
-      <li><a href="https://www.linkedin.com/in/chbdev">LinkedIn</a></li>
-      <li><a href="https://github.com/CHBaker">GitHub</a></li>
-      <li><a href="/resume.pdf">Resume (PDF)</a></li>
-    </ul>
     <p class="founder"><a href="https://internetcarpenter.com">Founder of Internet Carpenter, builder of Longbow</a></p>
     <p class="fine">Charles Hudson Baker. Colorado Springs, CO. Remote.</p>
   </div>
@@ -439,6 +548,39 @@
   var doc = document.documentElement;
   doc.classList.add("js");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* contact form: posts to /api/contact (a Worker route; the code is in the chbdev repo, src/contact.js) */
+  var cform = document.getElementById("cform");
+  if (cform) {
+    var cStatus = document.getElementById("cf-status"), cSend = document.getElementById("cf-send"), cOpened = Date.now();
+    var cSay = function (msg, kind) { cStatus.textContent = msg; cStatus.className = "cstatus" + (kind ? " " + kind : ""); };
+    cform.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var nm = cform.elements["name"].value.trim(), em = cform.elements["email"].value.trim(), msg = cform.elements["message"].value.trim();
+      var emailOk = em.indexOf("@") > 0 && em.indexOf(" ") < 0 && em.lastIndexOf(".") > em.indexOf("@") + 1 && em.lastIndexOf(".") < em.length - 1;
+      if (!nm || !emailOk || msg.length < 10) { cSay("Please add your name, a valid email, and a message of at least a sentence.", "err"); return; }
+      cSend.disabled = true; cSay("Sending...");
+      fetch("/api/contact", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ name: nm, email: em, message: msg, website: cform.elements["website"].value, t: cOpened }) })
+        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
+        .then(function (res) {
+          if (res.ok) { cform.reset(); cSay("Sent. I will write back from my own email.", "ok"); }
+          else { cSay((res.j && res.j.error ? res.j.error + " " : "That did not go through. ") + "You can also email charlesprobaker@gmail.com directly.", "err"); }
+        })
+        .catch(function () { cSay("That did not go through. You can email charlesprobaker@gmail.com directly.", "err"); })
+        .then(function () { cSend.disabled = false; });
+    });
+  }
+
+  /* theme */
+  var KEY = "hb-theme";
+  try { var saved = localStorage.getItem(KEY); if (saved) doc.setAttribute("data-theme", saved); } catch (e) {}
+  document.getElementById("theme").addEventListener("click", function () {
+    var cur = doc.getAttribute("data-theme");
+    if (!cur) cur = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    var next = cur === "dark" ? "light" : "dark";
+    doc.setAttribute("data-theme", next);
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+  });
 
   /* tabs */
   function pick(tab, focus) {
